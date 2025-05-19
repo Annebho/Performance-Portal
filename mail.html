@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Contact Form</title>
+  <style>
+  </style>
+</head>
+<body>
+  <section id="home">
+    <header style="background-color:#dba13b; height: 50px;">
+      <h3 style="color: white; font-size: 12px; text-align: left; font-family: Arial, Helvetica, sans-serif; padding: 10px;">
+        Employee Mid-Year Appraisal Review
+      </h3>
+    </header>
+
+    <form action="mail.php" method="POST">
+
+      <div class="form-container">
+        <div class="form-group">
+          <h3 style="text-decoration:underline; font-size:12px;">Appraisee Information</h3>
+          <label for="name">1. Name:</label>
+          <input type="text" id="name" name="name" required placeholder="...">
+
+          <label for="email">3. Email:</label>
+          <input type="email" id="email" name="email" required placeholder="...">
+
+          <label for="manager">5. Manager</label>
+          <select id="manager" name="manager">
+            <option value="idk">idk</option>
+            <option value="idk">idk</option>
+            <option value="idk">idk</option>
+          </select>
+
+          <label for="revI">7. Reviewer I</label>
+          <select id="revI" name="revI">
+            <option value="idk">idk</option>
+            <option value="idk">idk</option>
+            <option value="idk">idk</option>
+          </select><br>
+        </div>
+
+        <div class="form-group">
+          <br><br><br>
+          <label for="jobtitle">2. Job Title:</label>
+          <input type="text" id="jobtitle" name="jobtitle" placeholder="...">
+
+          <label for="department">4. Department:</label>
+          <input type="text" id="department" name="department" placeholder="...">
+
+          <label for="pac">6. Performance Appraisal Cycle:</label>
+          <input type="text" id="pac" name="pac" placeholder="...">
+
+          <label for="revII">8. Reviewer II (Where Applicable):</label>
+          <input type="text" id="revII" name="revII" placeholder="...">
+        </div>
+      </div>
+
+      <h3 style="text-decoration:underline; font-size:12px;">Performance Appraisal Metrics</h3>
+      <h3 style="font-size:12px;">Work Objectives</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Objective</th>
+            <th>Success Measure</th>
+            <th>Weight</th>
+            <th>Mid-Year Review</th>
+            <th>End of Year Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <textarea id="category1" name="Category1" placeholder="..." rows="3"></textarea>
+              <textarea name="Category2" placeholder="..." rows="3"></textarea>
+              <textarea name="Category3" placeholder="..." rows="3"></textarea>
+              <textarea name="Category4" placeholder="..." rows="3"></textarea>
+              <textarea name="Category5" placeholder="..." rows="3"></textarea>
+              <textarea name="Category6" placeholder="..." rows="3"></textarea>
+            </td>
+
+            <td>
+              <textarea name="Objective1" placeholder="..." rows="3"></textarea>
+              <textarea name="Objective2" placeholder="..." rows="3"></textarea>
+              <textarea name="Objective3" placeholder="..." rows="3"></textarea>
+              <textarea name="Objective4" placeholder="..." rows="3"></textarea>
+              <textarea name="Objective5" placeholder="..." rows="3"></textarea>
+              <textarea name="Objective6" placeholder="..." rows="3"></textarea>
+            </td>
+
+            <td>
+              <textarea name="SuccessMeasure1" placeholder="..." rows="3"></textarea>
+              <textarea name="SuccessMeasure2" placeholder="..." rows="3"></textarea>
+              <textarea name="SuccessMeasure3" placeholder="..." rows="3"></textarea>
+              <textarea name="SuccessMeasure4" placeholder="..." rows="3"></textarea>
+              <textarea name="SuccessMeasure5" placeholder="..." rows="3"></textarea>
+              <textarea name="SuccessMeasure6" placeholder="..." rows="3"></textarea>
+            </td>
+
+            <td>
+              <input type="text" id="1" name="Weight1" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="2" name="Weight2" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="3" name="Weight3" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="4" name="Weight4" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="5" name="Weight5" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="6" name="Weight6" placeholder="0%" oninput="updateTotal()"><br><br><br>
+
+              <div class="total">Total: <span id="total">0</span>%</div>
+            </td>
+
+            <td>
+              <textarea name="MidYearReview1" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview2" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview3" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview4" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview5" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview6" placeholder="..." rows="3"></textarea>
+            </td>
+
+            <td>
+              <textarea name="EndYearReview1" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview2" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview3" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview4" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview5" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview6" placeholder="..." rows="3"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+   
+  </section>
+
+  <section id="table">
+    <h3 style="text-decoration:underline; font-size:22px; font-family: Segoe UI ;">Talent Assessment Feedback: Core Skills</h3>
+    <table>
+      <thead style="font-family:Segoe UI;"> 
+        <tr><th>Category</th>
+                <th>Weight</th>
+            <th>Mid-Year Review</th>
+            <th>End of Year Comments</th>
+          </tr>
+      </thead>
+      <tbody style="font-family:Segoe UI;">
+        <tr>
+          <td>
+            <textarea name="Kategory1" readonly> Understands GFW business operations. Understands BU ways of working;  information and process flow </textarea>
+
+            <textarea  name="Kategory2" readonly> Understanding of key commercial factors (spend, volume, margin, etc.) relevant to level and job.       uses this knowledge to make informed business decisions relevant to job that promote profitable growth.</textarea>
+
+            <textarea name="Kategory3"  class="kawaii" readonly> Leverages tools and techniques and proactively use them to solve problems. (Project Management focused</textarea>
+
+            <textarea name="Kategory4" readonly> Challenges status quo and recommends value adding initiatives that will drive cost savings and efficiency</textarea>
+
+            <textarea name="Kategory5" readonly> Develops and manage effective relationships with stakeholders through effective negotiation.    Effective    communication skills. Effective conflict resolution skills</textarea>
+          </td>
+          <td>
+              <input type="text" id="1" name="Weightb1" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="2" name="Weightb2" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="3" name="Weightb3" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="4" name="Weightb4" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <input type="text" id="5" name="Weightb5" placeholder="0%" oninput="updateTotal()"><br><br><br>
+              <div class="total">Total: <span id="total">0</span>%</div>
+            </td>
+
+            <td>
+              <textarea name="MidYearReview_b1" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview_b2" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview_b3" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview_b4" placeholder="..." rows="3"></textarea>
+              <textarea name="MidYearReview_b5" placeholder="..." rows="3"></textarea>
+            </td>
+
+            <td>
+              <textarea name="EndYearReview_b1" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview_b2" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview_b3" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview_b4" placeholder="..." rows="3"></textarea>
+              <textarea name="EndYearReview_b5" placeholder="..." rows="3"></textarea>
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <input type="submit" value="Submit"> 
+  </form>
+  </section>
+
+<script>
+  function updateTotal() {
+    let sum = 0;
+    for (let i = 1; i <= 10; i++) {
+      const input = document.getElementById(i.toString());
+      if (input) {
+        const val = input.value.replace('%', '').trim(); // remove percent signs & spaces
+        sum += parseFloat(val) || 0;
+      }
+    }
+
+    const totalElement = document.getElementById("total");
+    totalElement.textContent = sum.toFixed(2);
+
+    // Allow slight floating point rounding error
+    totalElement.classList.toggle("error", Math.abs(sum - 100) > 0.01);
+  }
+
+  function validatePercentage() {
+    let sum = 0;
+    for (let i = 1; i <= 10; i++) {
+      const input = document.getElementById(i.toString());
+      if (input) {
+        const val = input.value.replace('%', '').trim();
+        sum += parseFloat(val) || 0;
+      }
+    }
+
+    if (Math.abs(sum - 100) > 0.01) {
+      alert("The total must equal 100%.");
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>
